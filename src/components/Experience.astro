@@ -1,0 +1,39 @@
+---
+const experience = [
+  {
+    date: "INT FOOD SERVICES CORP S.A. 2024",
+    title: "Desarrollador de un bot |  PASANTE",
+    description:
+      "Análisis de elementos DOM HTML en el sistema empresarial de la empresa. Análisis de posibles automatizaciones del sistema Desarrollo de un Bot con Python para las automatizaciones con los elementos DOM HTML",
+  },
+  {
+    date: "INT FOOD SERVICES CORP S.A. 2023",
+    title: "Documentación de Código | PASANTE",
+    description: `Creación de documentación técnica detallada para sistemas existentes.
+    Apoyo en la definición de buenas prácticas de codificación y estándares. `,
+  },
+  {
+    date: " PROYECTOS, SERVICIOS Y CONSTRUCCIÓN LINKEARNET S.A. 2022 ",
+    title: " Desarrollador Web | PASANTE",
+    description: `Diseño y desarrollo de soluciones web utilizando Node.js y HBS.
+        Implementación de patrones MVC para estructurar aplicaciones escalables.`,
+  },
+];
+---
+
+<ol class="relative border-s border-gray-900 ml-3">
+  {
+    experience.map((item) => (
+      <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+        <time class="mb-1 text-sm font-normal leading-none text-sky-900">
+          {item.date}
+        </time>
+        <h3 class="text-lg font-semibold text-green-700 mt-2">{item.title}</h3>
+        <p class="mb-4 text-base font-normal text-gray-600">
+          {item.description}
+        </p>
+      </li>
+    ))
+  }
+</ol>

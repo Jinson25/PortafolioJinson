@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/onest"
 import Header from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -12,20 +13,27 @@ import Header from '../components/Header.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Portafolio || Jinson Medina</title>
 	</head>
-	<body>
+	<body class="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
 		<Header/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
 
 <style is:global>
 	html {
 		font-family: 'Onest Variable',system-ui, sans-serif;
+		scroll-behavior: smooth;
 	}
 
 	body {
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		min-height: 100vh;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>
