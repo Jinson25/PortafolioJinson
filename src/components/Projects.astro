@@ -1,0 +1,62 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import AngularIcon from "./icons/Angular.astro";
+import ExpressIcon from "./icons/Express.astro";
+import TailwindCSSIcon from "./icons/TailwindCSS.astro";
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-black text-white",
+    icon: AngularIcon,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-green-500 text-white",
+    icon: ExpressIcon,
+  },
+  TAILWINDCSS: {
+    name: "TailwindCSS",
+    class: "bg-blue-500 text-white",
+    icon: TailwindCSSIcon,
+  },
+};
+
+const projects = [
+  {
+    title: "Truequecito",
+    description:
+      "Pagina web para intercambiar productos y servicios de manera segura y confiable.",
+    link: "https://truequecito.vercel.app",
+    GitHub: "https://github.com/Jinson25/sitio-web-truequecito",
+    image: "/projects/truequecito.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWINDCSS, TAGS.EXPRESS],
+  },
+];
+---
+
+{
+  projects.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}
