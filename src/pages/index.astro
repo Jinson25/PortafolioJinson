@@ -1,23 +1,27 @@
 ---
-import Badge from "../components/Badge.astro";
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import GitHubIcon from "../components/icons/GitHub.astro";
-import EmailIcon from "../components/icons/Email.astro";
-import SocialPill from "../components/SocialPill.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Experience from "../components/Experience.astro";
+
+import AboutMe from "../components/AboutMe.astro";
+import Badge from "../components/Badge.astro";
 import BriefCaseIcon from "../components/icons/BriefCase.astro";
 import CodeIcon from "../components/icons/Code.astro";
+import EmailIcon from "../components/icons/Email.astro";
+import Experience from "../components/Experience.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import UserCodeIcon from "../components/icons/UserCode.astro";
+import Welcome from "../components/Welcome.astro";
 ---
-
 <Layout>
   <Welcome />
   <main class="px-4">
     <SectionContainer id="top" class="py-44 pb-32">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
         Hola, soy Jinson
         <a
           href="https://www.linkedin.com/in/jinson-medina/"
@@ -45,11 +49,11 @@ import Projects from "../components/Projects.astro";
         </SocialPill>
         <SocialPill href="mailto:jinsonalejandro@gmail.com">
           <EmailIcon class="size-4 lg:size-6" />
-          jinsonalejandro@gmail.com
+          Contactame
         </SocialPill>
       </nav>
     </SectionContainer>
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id="experiencia">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <BriefCaseIcon class="size-7" />
         Experiencia laboral
@@ -63,6 +67,13 @@ import Projects from "../components/Projects.astro";
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <UserCodeIcon class="size-7" />
+        Sobre mi
+      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>

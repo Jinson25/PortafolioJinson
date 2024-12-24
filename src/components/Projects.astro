@@ -1,8 +1,11 @@
 ---
-import GitHub from "./icons/GitHub.astro";
+import GitHubIcon from "./icons/GitHub.astro";
 import AngularIcon from "./icons/Angular.astro";
 import ExpressIcon from "./icons/Express.astro";
 import TailwindCSSIcon from "./icons/TailwindCSS.astro";
+import LinkButton from "./LinkButton.astro";
+import WorldIcon from "./icons/WordWww.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -12,17 +15,22 @@ const TAGS = {
   },
   EXPRESS: {
     name: "Express",
-    class: "bg-green-500 text-white",
+    class: "bg-black text-white",
     icon: ExpressIcon,
   },
   TAILWINDCSS: {
     name: "TailwindCSS",
-    class: "bg-blue-500 text-white",
+    class: "bg-black text-white",
     icon: TailwindCSSIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-black text-white",
+    icon: BootstrapIcon,
   },
 };
 
-const projects = [
+const PROJECTS = [
   {
     title: "Truequecito",
     description:
@@ -32,31 +40,78 @@ const projects = [
     image: "/projects/truequecito.webp",
     tags: [TAGS.ANGULAR, TAGS.TAILWINDCSS, TAGS.EXPRESS],
   },
+  {
+    title: "YaviFood",
+    description:
+      "Pagina web para pedir comida de manera rapida y segura.",
+    link: "https://yavifood.vercel.app",
+    GitHub: "https://github.com/Jinson25/api-rest-yavifood",
+    image: "/projects/truequecito.webp",
+    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.EXPRESS],
+  },
+  {
+    title: "YaviBook",
+    description:
+      "Pagina web para compartir ver libros favoritos con otras personas.",
+    link: "https://api-rest-yavibook.onrender.com/",
+    GitHub: "https://github.com/Jinson25/sitio-web-yavibook",
+    image: "/projects/yavibook.webp",
+    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.EXPRESS],
+  },
 ];
 ---
 
-{
-  projects.map(({ title, description, tags, image }) => (
-    <article>
-      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
-    </article>
-  ))
-}
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, GitHub }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={`Captura de pantalla del proyecto ${image}`}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="text-lg mb-4 text-pretty">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              <LinkButton href={GitHub}>
+                <GitHubIcon class="size-6" />
+                Code
+              </LinkButton>
+              {link && (
+                <LinkButton href={link}>
+                  <WorldIcon class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
