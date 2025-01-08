@@ -1,6 +1,6 @@
 # Portfolio de Jinson Medina
 
-![Portfolio Preview](/public/projects/truequecito.webp)
+![image](https://github.com/user-attachments/assets/c93d61d7-988d-42e5-bce0-570651af6f5c)
 
 ## 🚀 Descripción
 
