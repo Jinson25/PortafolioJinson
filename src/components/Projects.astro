@@ -6,6 +6,7 @@ import TailwindCSSIcon from "./icons/TailwindCSS.astro";
 import LinkButton from "./LinkButton.astro";
 import WorldIcon from "./icons/WordWww.astro";
 import BootstrapIcon from "./icons/Bootstrap.astro";
+import ReactIcon from "./icons/React.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -28,6 +29,11 @@ const TAGS = {
     class: "bg-black text-white",
     icon: BootstrapIcon,
   },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: ReactIcon,
+  },
 };
 
 const PROJECTS = [
@@ -43,10 +49,10 @@ const PROJECTS = [
   {
     title: "YaviFood",
     description:
-      "Pagina web para pedir comida de manera rapida y segura.",
+      "Pagina web para pedir comida de manera rapida y segura en Yavirac.",
     link: "https://yavifood.vercel.app",
-    GitHub: "https://github.com/Jinson25/api-rest-yavifood",
-    image: "/projects/truequecito.webp",
+    GitHub: "https://github.com/Jinson25/yaviFood",
+    image: "/projects/yavifood.webp",
     tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.EXPRESS],
   },
   {
@@ -56,7 +62,7 @@ const PROJECTS = [
     link: "https://api-rest-yavibook.onrender.com/",
     GitHub: "https://github.com/Jinson25/sitio-web-yavibook",
     image: "/projects/yavibook.webp",
-    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.EXPRESS],
+    tags: [TAGS.REACT, TAGS.BOOTSTRAP, TAGS.EXPRESS],
   },
 ];
 ---
